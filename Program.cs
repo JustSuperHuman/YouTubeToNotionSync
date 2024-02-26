@@ -39,17 +39,12 @@ class Program
             string name = item.Key;
             string pageId = item.Value.PageId;
 
-            //if(name != "FocusedLucas")
-            //{
-            //    continue;
-            //}
 
             if (!item.Value.Tags.Contains("YouTube"))
             {
                 Console.WriteLine($"{name} does not have a YouTube tag. Skipping...");
                 continue;
             }
-            continue;
 
             // Retrieve YouTube channel details (Channel ID, Subscriber Count, Thumbnail URL, Banner Image URL) in one API call to reduce unnecessary calls
             var youtubeDetails = await GetYouTubeChannelDetails(name);
